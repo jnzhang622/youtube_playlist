@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  state = {
+    playlist: [],
+    code: "",
+  }
+
+  fetchPlaylist = () =>{
+    fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${this.state.code}&key=${process.env.REACT_APP_API_KEY}`)
+      .then(resp => resp.json())
+      .then(data => this.setState({ playlists: data }))
+  }
+
+
+  render() {
+    return(
+      <div>hello</div>
+    )
+  }
 }
-
 export default App;
