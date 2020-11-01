@@ -7,7 +7,11 @@ class App extends React.Component {
     code: "PLuF8GDJO9aZLEdVIiCJQgkEeHSocIEy5r",
   }
 
-  fetchPlaylist = () =>{
+  componentDidMount(){
+    this.fetchPlaylist()
+  }
+
+  fetchPlaylist = (e) => {
     fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${this.state.code}&key=${process.env.REACT_APP_API_KEY}`)
       .then(resp => resp.json())
       .then(data => this.setState({ rawData: data }))
@@ -15,8 +19,11 @@ class App extends React.Component {
 
 
   render() {
+    console.log(this.state.rawData)
     return(
-    <div>{this.state.rawData}</div>
+    <div>
+      
+    </div>
     )
   }
 }
