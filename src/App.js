@@ -1,11 +1,10 @@
 import React from "react";
 
 class App extends React.Component {
-
   state = {
     rawData: [],
     playlist: [],
-    code: "",
+    code: "PLuF8GDJO9aZLEdVIiCJQgkEeHSocIEy5r",
   }
 
   fetchPlaylist = () =>{
@@ -17,7 +16,7 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>hello</div>
+    <div>{this.state.rawData}</div>
     )
   }
 }
