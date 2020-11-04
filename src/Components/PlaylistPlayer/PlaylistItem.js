@@ -5,18 +5,18 @@ class Playlist extends React.Component {
         video: ''
     }
 
-    handleDelete = () => {
-        fetch(`http://localhost:3000/api/v1/videos/${this.props.video.id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-        })
-            .then(res => res.json())
-            .then(() => this.props.handleUpdate())
-        // console.log(this.props.video.id)
-    }
+    // handleDelete = () => {
+    //     fetch(`http://localhost:3000/api/v1/videos/${this.props.video.id}`, {
+    //         method: "DELETE",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             "Accept": "application/json"
+    //         },
+    //     })
+    //         .then(res => res.json())
+    //         .then(() => this.props.handleUpdate())
+    //     // console.log(this.props.video.id)
+    // }
 
 
     render() {

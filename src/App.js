@@ -1,4 +1,7 @@
 import React from "react";
+import "./App.css";
+// import PlaylistPlayer from "./Components/PlaylistPlayer"
+;
 
 class App extends React.Component {
   state = {
@@ -31,7 +34,9 @@ class App extends React.Component {
     console.log(this.state.rawData)
     return(
       <div>
-        hello
+        {/* <PlaylistPlayer
+          playlist={this.state.playlist}
+        /> */}
       </div>
     )
   }
